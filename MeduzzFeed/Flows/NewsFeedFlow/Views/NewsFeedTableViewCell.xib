@@ -19,19 +19,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Subtitle" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGO-F3-70d">
-                        <rect key="frame" x="20" y="61" width="270" height="23"/>
+                        <rect key="frame" x="20" y="61" width="280" height="23"/>
                         <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3p2-VK-7Od">
-                        <rect key="frame" x="20" y="94" width="270" height="15"/>
+                        <rect key="frame" x="20" y="94" width="280" height="15"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                         <color key="textColor" systemColor="systemGrayColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCz-if-0gW">
-                        <rect key="frame" x="20" y="20" width="270" height="36"/>
+                        <rect key="frame" x="20" y="20" width="280" height="36"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="22"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -39,15 +39,15 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="nCz-if-0gW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="DIH-Co-Fad"/>
-                    <constraint firstItem="nCz-if-0gW" firstAttribute="bottom" secondItem="SGO-F3-70d" secondAttribute="top" constant="-5" id="Ifz-Zb-reY"/>
+                    <constraint firstItem="SGO-F3-70d" firstAttribute="top" secondItem="nCz-if-0gW" secondAttribute="bottom" constant="5" id="Ifz-Zb-reY"/>
                     <constraint firstItem="3p2-VK-7Od" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottom" constant="-10" id="ODP-kH-4tq"/>
-                    <constraint firstItem="nCz-if-0gW" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" constant="-30" id="ODR-WN-T7m"/>
+                    <constraint firstItem="nCz-if-0gW" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" constant="-20" id="ODR-WN-T7m"/>
                     <constraint firstItem="nCz-if-0gW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="dOA-95-nkm"/>
                     <constraint firstItem="SGO-F3-70d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="dcG-lm-dRR"/>
-                    <constraint firstItem="3p2-VK-7Od" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" constant="-30" id="kjV-vo-6Q3"/>
+                    <constraint firstItem="3p2-VK-7Od" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" constant="-20" id="kjV-vo-6Q3"/>
                     <constraint firstItem="3p2-VK-7Od" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="mTQ-nn-wne"/>
-                    <constraint firstItem="SGO-F3-70d" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" constant="-30" id="oQx-MR-3jS"/>
-                    <constraint firstItem="SGO-F3-70d" firstAttribute="bottom" secondItem="3p2-VK-7Od" secondAttribute="top" constant="-10" id="uyu-UJ-Z0u"/>
+                    <constraint firstItem="SGO-F3-70d" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" constant="-20" id="oQx-MR-3jS"/>
+                    <constraint firstItem="3p2-VK-7Od" firstAttribute="top" secondItem="SGO-F3-70d" secondAttribute="bottom" constant="10" id="uyu-UJ-Z0u"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
