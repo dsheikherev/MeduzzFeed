@@ -7,7 +7,11 @@
 
 import UIKit
 
-class ArticleDetailsViewController: UIViewController {
+class ArticleDetailsViewController: UIViewController, ArticleDetailsView {
+
+    var article = Article(title: "", subtitle: "", date: "")
+    
+    var onGoToOriginalLink: ((String) -> Void)?
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -17,11 +21,12 @@ class ArticleDetailsViewController: UIViewController {
     @IBOutlet weak var originalLinkButton: UIButton!
     
     @IBAction func originalLinkButtonTapped(_ sender: Any) {
+        onGoToOriginalLink?("https://meduza.io")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     

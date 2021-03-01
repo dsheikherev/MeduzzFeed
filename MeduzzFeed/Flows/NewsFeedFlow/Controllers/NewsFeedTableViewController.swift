@@ -7,8 +7,10 @@
 
 import UIKit
 
-class NewsFeedTableViewController: UIViewController {
-
+class NewsFeedTableViewController: UIViewController, NewsFeedTableView {
+    
+    var onArticleSelected: ((Article) -> ())?
+    
     @IBOutlet weak var tableView: UITableView!
     
     var fakeArticles = Array<Article>(repeating: Article(title: "Россия должна быть не только свободной, но и счастливой", subtitle: "Последнее слово Алексея Навального, в котором он цитировал Библию, «Гарри Поттера» и «Рика и Морти»", date: "20 февраля 2021"), count: 10)
@@ -45,5 +47,10 @@ extension NewsFeedTableViewController: UITableViewDelegate, UITableViewDataSourc
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let article = fakeArticles[indexPath.row]
+        onArticleSelected?(article)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
 }
