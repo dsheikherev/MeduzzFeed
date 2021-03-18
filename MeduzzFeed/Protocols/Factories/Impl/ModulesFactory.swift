@@ -10,7 +10,9 @@ import Foundation
 final class ModulesFactory: NewsFeedModuleFactory {
     
     func makeNewsFeed() -> NewsFeedTableView {
-        return NewsFeedTableViewController.controllerFromStoryboard(.newsFeed)
+        let vc = NewsFeedTableViewController.controllerFromStoryboard(.newsFeed)
+        vc.viewModel = DefaultNewsFeedTableViewModel()
+        return vc
     }
     
     func makeArticleDetails() -> ArticleDetailsView {

@@ -30,7 +30,7 @@ final class NewsFeedFlowCoordinator: BaseCoordinator {
     }
     
     private func showDetailsOf(_ article: Article) {
-        var articleDetails = moduleFactory.makeArticleDetails()
+        let articleDetails = moduleFactory.makeArticleDetails()
         articleDetails.article = article
         articleDetails.onGoToOriginalLink = { [weak self] urlString in
             
