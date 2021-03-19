@@ -16,7 +16,11 @@ class NewsFeedTableViewController: UIViewController, NewsFeedTableView {
     @IBOutlet weak var tableView: UITableView!
     
     var tableFooterSpinner: UIActivityIndicatorView?
-    
+    var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshFeed), for: .valueChanged)
+        return refreshControl
+    }()
 //    var request: MeduzaAPIRequest<NewsFeedAPIResource>?
     
     override func viewDidLoad() {
@@ -25,6 +29,7 @@ class NewsFeedTableViewController: UIViewController, NewsFeedTableView {
         tableView.register(UINib(nibName: "NewsFeedTableViewCell", bundle: nil), forCellReuseIdentifier: "NewsFeedTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.refreshControl = refreshControl
         
         self.title = "Meduza.io"
         
@@ -35,6 +40,10 @@ class NewsFeedTableViewController: UIViewController, NewsFeedTableView {
     private func bind(to viewModel: NewsFeedTableViewModel) {
         viewModel.articles.observe(on: self) { [weak self] _ in self?.updateArticles() }
         viewModel.loading.observe(on: self) { [weak self] in self?.updateLoading($0) }
+    }
+    
+    @objc private func refreshFeed() {
+        viewModel.didRefreshFeed()
     }
     
     private func updateArticles() {
@@ -50,9 +59,12 @@ class NewsFeedTableViewController: UIViewController, NewsFeedTableView {
                 tableFooterSpinner?.removeFromSuperview()
                 tableFooterSpinner = createTableFooterSpinner(size: CGSize(width: tableView.frame.width, height: 50))
                 tableView.tableFooterView = tableFooterSpinner
+            case .refresh:
+                refreshControl.beginRefreshing()
             case .none:
                 tableView.tableFooterView = nil
                 FullScreenSpinnerView.hide()
+                refreshControl.endRefreshing()
         }
     }
 }

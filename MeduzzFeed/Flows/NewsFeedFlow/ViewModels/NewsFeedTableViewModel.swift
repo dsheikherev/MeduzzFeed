@@ -10,10 +10,12 @@ import Foundation
 enum NewsFeedTableViewModelLoadingType {
     case fullScreen
     case nextPage
+    case refresh
 }
 
 protocol NewsFeedTableViewModelInput {
     func viewDidLoad()
+    func didRefreshFeed()
     func didLoadNextPage()
 }
 
@@ -32,14 +34,16 @@ final class DefaultNewsFeedTableViewModel: NewsFeedTableViewModel {
     
     var loading: Observable<NewsFeedTableViewModelLoadingType?> = Observable(.none)
     
-    private func loadNewsFeed() {
-        if articles.value.isEmpty {
-            loading.value = .fullScreen
-            DispatchQueue.global().asyncAfter(deadline: .now() + 2) { [weak self] in
-                guard let self = self else { return }
-                self.articles.value = self.fakeArticles
-                self.loading.value = .none
-            }
+    private func load(_ type: NewsFeedTableViewModelLoadingType) {
+        guard loading.value == .none else { return }
+        
+        loading.value = type
+        
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2) { [weak self] in
+            guard let self = self else { return }
+            
+            self.articles.value = type == .nextPage ? self.articles.value + self.fakeArticles : self.fakeArticles
+            self.loading.value = .none
         }
     }
 
@@ -47,16 +51,14 @@ final class DefaultNewsFeedTableViewModel: NewsFeedTableViewModel {
 
 extension DefaultNewsFeedTableViewModel {
     func viewDidLoad() {
-        loadNewsFeed()
+        load(.fullScreen)
+    }
+    
+    func didRefreshFeed() {
+        load(.refresh)
     }
     
     func didLoadNextPage() {
-        guard loading.value == .none else { return }
-        loading.value = .nextPage
-        DispatchQueue.global().asyncAfter(deadline: .now() + 2) { [weak self] in
-            guard let self = self else { return }
-            self.articles.value += self.fakeArticles
-            self.loading.value = .none
-        }
+        load(.nextPage)
     }
 }
