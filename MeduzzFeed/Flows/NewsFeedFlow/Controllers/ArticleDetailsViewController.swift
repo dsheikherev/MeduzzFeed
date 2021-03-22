@@ -8,9 +8,7 @@
 import UIKit
 
 class ArticleDetailsViewController: UIViewController, ArticleDetailsView {
-
-    var article = Article(title: "", subtitle: "", date: "")
-    
+  
     var onGoToOriginalLink: ((String) -> Void)?
 
     @IBOutlet weak var imageView: UIImageView!

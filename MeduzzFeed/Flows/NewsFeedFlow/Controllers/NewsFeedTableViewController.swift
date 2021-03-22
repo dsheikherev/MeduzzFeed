@@ -21,7 +21,6 @@ class NewsFeedTableViewController: UIViewController, NewsFeedTableView {
         refreshControl.addTarget(self, action: #selector(refreshFeed), for: .valueChanged)
         return refreshControl
     }()
-//    var request: MeduzaAPIRequest<NewsFeedAPIResource>?
     
     override func viewDidLoad() {
         super.viewDidLoad()

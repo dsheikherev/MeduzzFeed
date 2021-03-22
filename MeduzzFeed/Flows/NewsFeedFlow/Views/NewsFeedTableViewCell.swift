@@ -26,7 +26,14 @@ class NewsFeedTableViewCell: UITableViewCell, NewsFeedArticleParser {
     func parse(_ article: Article) {
         titleLabel.text = article.title
         subtitleLabel.text = article.subtitle
-        dateLabel.text = article.date
+        dateLabel.text = date(from: article.date)
     }
     
+    private func date(from seconds: Int) -> String {
+        let date = Date(timeIntervalSince1970: TimeInterval(seconds))
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter.string(from: date)
+    }
 }
