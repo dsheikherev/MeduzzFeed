@@ -65,6 +65,7 @@ class NewsFeedTableViewController: UIViewController, NewsFeedTableView {
                 tableView.tableFooterView = nil
                 FullScreenSpinnerView.hide()
                 refreshControl.endRefreshing()
+                refreshControl.isHidden = true
         }
     }
     
