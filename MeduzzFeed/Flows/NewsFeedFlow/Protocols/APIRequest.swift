@@ -20,13 +20,17 @@ extension APIRequest {
             
             guard let self = self else { return }
             
-            if let error = error {
-                completion(nil)
+            if error != nil {
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
             }
             
             guard let response = response as? HTTPURLResponse,
                   (200...299).contains(response.statusCode) else {
-                completion(nil)
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
                 return
             }
             
