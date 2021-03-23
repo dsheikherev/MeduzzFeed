@@ -39,6 +39,7 @@ class NewsFeedTableViewController: UIViewController, NewsFeedTableView {
     private func bind(to viewModel: NewsFeedTableViewModel) {
         viewModel.articles.observe(on: self) { [weak self] _ in self?.updateArticles() }
         viewModel.loading.observe(on: self) { [weak self] in self?.updateLoading($0) }
+        viewModel.error.observe(on: self) { [weak self] in self?.updateError($0) }
     }
     
     @objc private func refreshFeed() {
@@ -65,6 +66,14 @@ class NewsFeedTableViewController: UIViewController, NewsFeedTableView {
                 FullScreenSpinnerView.hide()
                 refreshControl.endRefreshing()
         }
+    }
+    
+    private func updateError(_ message: String) {
+        guard !message.isEmpty else { return }
+        
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
 
