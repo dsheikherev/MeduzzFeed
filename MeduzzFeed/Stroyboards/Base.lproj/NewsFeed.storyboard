@@ -90,7 +90,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="wiq-OS-ZWR"/>
                                                 </constraints>
-                                                <state key="normal" title="Original">
+                                                <state key="normal" title="Origin">
                                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -150,10 +150,10 @@
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="c7G-A7-wd4" id="t8m-sb-u7u"/>
+                        <outlet property="descriptionLabel" destination="Jjz-nZ-c6W" id="xYs-kC-V09"/>
                         <outlet property="imageView" destination="Tlo-jO-5fe" id="8j6-b8-cxy"/>
                         <outlet property="originalLinkButton" destination="nyh-aW-vV7" id="naH-Sm-lza"/>
                         <outlet property="secondTitleLabel" destination="pOb-Ji-rQw" id="Tkl-l5-T8a"/>
-                        <outlet property="textLabel" destination="Jjz-nZ-c6W" id="xYs-kC-V09"/>
                         <outlet property="titleLabel" destination="ZxX-y5-T4J" id="6TK-6w-71G"/>
                     </connections>
                 </viewController>
