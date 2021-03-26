@@ -10,5 +10,5 @@ import Foundation
 protocol NewsFeedModuleFactory {
     
     func makeNewsFeed() -> NewsFeedTableView
-    func makeArticleDetails() -> ArticleDetailsView
+    func makeDetailsOfArticle(with url: String) -> ArticleDetailsView
 }

@@ -51,7 +51,7 @@ final class DefaultNewsFeedTableViewModel: NewsFeedTableViewModel {
             guard let self = self else { return }
             if let newsFeed = newsFeed {
                 self.updateNewsFeed(with: newsFeed.toArticles())
-            } else{
+            } else {
                 self.error.value = "Network connection issue"
             }
             self.loading.value = .none

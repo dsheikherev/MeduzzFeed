@@ -9,7 +9,7 @@ import UIKit
 
 class NewsFeedTableViewController: UIViewController, NewsFeedTableView {
     
-    var onArticleSelected: ((Article) -> ())?
+    var onArticleSelected: ((String) -> ())?
     
     var viewModel: NewsFeedTableViewModel!
     
@@ -102,7 +102,7 @@ extension NewsFeedTableViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let article = viewModel.articles.value[indexPath.row]
-        onArticleSelected?(article)
+        onArticleSelected?(article.url)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

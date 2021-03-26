@@ -9,5 +9,5 @@ import Foundation
 
 protocol NewsFeedTableView: BaseView {
     
-    var onArticleSelected: ( (Article) -> () )? { get set }
+    var onArticleSelected: ( (String) -> () )? { get set }
 }

@@ -8,8 +8,6 @@
 import Foundation
 
 protocol ArticleDetailsView: BaseView {
-    
-//    var article: Article { get set }
-    
+     
     var onGoToOriginalLink: ( (String) -> Void )? { get set }
 }

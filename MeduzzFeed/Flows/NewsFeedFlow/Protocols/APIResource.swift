@@ -10,6 +10,5 @@ import Foundation
 protocol APIResource {
     associatedtype ResourceType: Decodable
     var methodPath: String { get }
-    var pageNumber: Int { get }
     var url: URL { get }
 }

@@ -10,7 +10,7 @@ import Foundation
 struct NewsFeedAPIResource: APIResource {
     typealias ResourceType = NewsFeed
     
-    var pageNumber: Int
+    var pageNumber: Int?
     
     var methodPath: String {
         return "/api/w5/search"
@@ -21,7 +21,7 @@ struct NewsFeedAPIResource: APIResource {
         components.path = methodPath
         components.queryItems = [
             URLQueryItem(name: "chrono", value: "news"),
-            URLQueryItem(name: "page", value: "\(pageNumber)"),
+            URLQueryItem(name: "page", value: "\(pageNumber ?? 0)"),
             URLQueryItem(name: "per_page", value: "20"),
             URLQueryItem(name: "locale", value: "en"),
         ]

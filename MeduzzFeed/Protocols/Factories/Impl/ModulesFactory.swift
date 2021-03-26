@@ -15,7 +15,11 @@ final class ModulesFactory: NewsFeedModuleFactory {
         return vc
     }
     
-    func makeArticleDetails() -> ArticleDetailsView {
-        return ArticleDetailsViewController.controllerFromStoryboard(.newsFeed)
+    func makeDetailsOfArticle(with url: String) -> ArticleDetailsView {
+        let vc = ArticleDetailsViewController.controllerFromStoryboard(.newsFeed)
+        let vm = DefaultArticleDetailsViewModel()
+        vm.url = url
+        vc.viewModel = vm
+        return vc
     }
 }
