@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EF1999C9260E199E00F1ABC7 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1999C8260E199E00F1ABC7 /* Details.swift */; };
+		EF1999D1260E3B4300F1ABC7 /* LoadImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1999D0260E3B4300F1ABC7 /* LoadImageRequest.swift */; };
 		EF390BA5260DE993007CB9A3 /* ArticleWithDetailsAPIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF390BA4260DE993007CB9A3 /* ArticleWithDetailsAPIResource.swift */; };
 		EF44B14325F2A2A400F13FBC /* ArticleWithDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF44B14225F2A2A400F13FBC /* ArticleWithDetails.swift */; };
 		EF44B14725F2A78300F13FBC /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF44B14625F2A78300F13FBC /* NewsFeed.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		EF1999C8260E199E00F1ABC7 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		EF1999D0260E3B4300F1ABC7 /* LoadImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImageRequest.swift; sourceTree = "<group>"; };
 		EF390BA4260DE993007CB9A3 /* ArticleWithDetailsAPIResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleWithDetailsAPIResource.swift; sourceTree = "<group>"; };
 		EF44B14225F2A2A400F13FBC /* ArticleWithDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleWithDetails.swift; sourceTree = "<group>"; };
 		EF44B14625F2A78300F13FBC /* NewsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeed.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				EF44B14F25F3F56C00F13FBC /* NewsFeedAPIResource.swift */,
 				EF44B15825F3FAB800F13FBC /* MeduzaAPIRequest.swift */,
 				EF390BA4260DE993007CB9A3 /* ArticleWithDetailsAPIResource.swift */,
+				EF1999D0260E3B4300F1ABC7 /* LoadImageRequest.swift */,
 			);
 			path = Impl;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF44B14725F2A78300F13FBC /* NewsFeed.swift in Sources */,
+				EF1999D1260E3B4300F1ABC7 /* LoadImageRequest.swift in Sources */,
 				EF44B15925F3FAB800F13FBC /* MeduzaAPIRequest.swift in Sources */,
 				EFC4FB7725EBD9B500509E62 /* Coordinator.swift in Sources */,
 				EFC4FB7B25EBDADB00509E62 /* BaseCoordinator.swift in Sources */,

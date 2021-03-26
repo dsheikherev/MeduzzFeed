@@ -44,6 +44,7 @@ class ArticleDetailsViewController: UIViewController, ArticleDetailsView {
         viewModel.details.observe(on: self) { [weak self] _ in self?.updateDetails() }
         viewModel.loading.observe(on: self) { [weak self] in self?.updateLoading($0) }
         viewModel.error.observe(on: self) { [weak self] in self?.showError(message: $0) }
+        viewModel.image.observe(on: self) { [weak self] in self?.updateImage($0) }
     }
     
     private func updateDetails() {
@@ -66,19 +67,25 @@ class ArticleDetailsViewController: UIViewController, ArticleDetailsView {
         }
     }
     
-    private func date(from seconds: Int) -> String {
-        let date = Date(timeIntervalSince1970: TimeInterval(seconds))
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .short
-        return formatter.string(from: date)
-    }
-    
     private func showError(message: String) {
         guard !message.isEmpty else { return }
         
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
+    }
+    
+    private func updateImage(_ image: UIImage?) {
+        if let image = image {
+            imageView.image = image
+        }
+    }
+    
+    private func date(from seconds: Int) -> String {
+        let date = Date(timeIntervalSince1970: TimeInterval(seconds))
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter.string(from: date)
     }
 }
