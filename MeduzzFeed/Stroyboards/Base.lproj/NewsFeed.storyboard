@@ -53,7 +53,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NO1-d9-KII" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1045"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lorem-ipsum" translatesAutoresizingMaskIntoConstraints="NO" id="Tlo-jO-5fe">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lorem-ipsum" translatesAutoresizingMaskIntoConstraints="NO" id="Tlo-jO-5fe">
                                                 <rect key="frame" x="20" y="20" width="374" height="170"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="170" id="VqY-4d-IwF"/>
