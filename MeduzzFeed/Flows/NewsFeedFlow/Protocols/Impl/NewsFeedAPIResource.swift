@@ -17,7 +17,7 @@ struct NewsFeedAPIResource: APIResource {
     }
     
     var url: URL {
-        var components = URLComponents(string: "https://meduza.io")!
+        var components = URLComponents(string: Constants.MEDUZA_URL)!
         components.path = methodPath
         components.queryItems = [
             URLQueryItem(name: "chrono", value: "news"),

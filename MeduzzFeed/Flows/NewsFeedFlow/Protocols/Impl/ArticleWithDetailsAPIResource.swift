@@ -17,7 +17,7 @@ struct ArticleWithDetailsAPIResource: APIResource {
     var detailsUrl: String
     
     var url: URL {
-        let url = URL(string: "https://meduza.io")!
+        let url = URL(string: Constants.MEDUZA_URL)!
             .appendingPathComponent(methodPath)
             .appendingPathComponent(detailsUrl)
         return url
